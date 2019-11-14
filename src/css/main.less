@@ -1,3 +1,30 @@
-body{
+#app{
     background-color: orange;
+
+    section{
+        border: 1px solid red;
+    }
+
+    #HomeWrap{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+
+        >section{
+            padding: 15px;
+        }
+    }
+
+    #RecipesWrap{
+        border-color: green;
+
+        h2{
+            color: #fff;
+        }
+
+         .recipe{
+             h3{
+                 color: blue;
+             }
+         }
+    }
 }

@@ -1,3 +1,22 @@
-body {
+#app {
   background-color: orange;
+}
+#app section {
+  border: 1px solid red;
+}
+#app #HomeWrap {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+#app #HomeWrap > section {
+  padding: 15px;
+}
+#app #RecipesWrap {
+  border-color: green;
+}
+#app #RecipesWrap h2 {
+  color: #fff;
+}
+#app #RecipesWrap .recipe h3 {
+  color: blue;
 }

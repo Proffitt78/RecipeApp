@@ -1,21 +1,23 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <Recipes 
-        msg="TEst"
-        :listOfRecipes="recipes"/>
-  </div>
+    <section id="HomeWrap" class="home">
+        <Ingredients />
+        <Recipes
+            msg="TEst"
+            :listOfRecipes="recipes"/>
+    </section>
 </template>
 
 <script>
 // @ is an alias to /src
+import Ingredients from '@/components/ingredients.vue'
 import Recipes from '@/components/recipes.vue'
 import { mapState } from "vuex"
 
 export default {
   name: 'home',
   components: {
-    Recipes
+    Recipes,
+    Ingredients
   },
   computed: {
       ...mapState(["recipes"])
