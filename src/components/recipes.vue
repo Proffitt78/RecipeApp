@@ -10,16 +10,22 @@
                     <span>test</span>
                 </v-tooltip>
                 <img :src="recipe.image" />
-                <section class="ingredients-used">
-                    <div v-for="(ingredient, index) in recipe.usedIngredients" class="ingredient">
-                        {{ ingredient.name }}
+                <section class="ingredients-wrap">
+                    <div class="ingredients-used">
+                        <ul>
+                            <li v-for="(ingredient, index) in recipe.usedIngredients" class="ingredient">
+                                {{ ingredient.name }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ingredients-missed">
+                        <ul>
+                            <li v-for="(ingredient, index) in recipe.missedIngredients" class="ingredient">
+                                {{ ingredient.name }}
+                            </li>
+                        </ul>
                     </div>
                 </section>
-                <div class="ingredients-missed">
-                    <div v-for="(ingredient, index) in recipe.missedIngredients" class="ingredient">
-                        {{ ingredient.name }}
-                    </div>
-                </div>
             </div>
         </div>
     </section>
