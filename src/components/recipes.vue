@@ -3,7 +3,10 @@
         <p>{{ msg }}</p>
         <h2>Recipes</h2>
         <div class="recipes" v-for="(recipe, index) in listOfRecipes">
-            <h2>{{ recipe.title }}</h2>
+            <v-tooltip>
+                <h2 slot="activator">{{ recipe.title }}</h2>
+                <span>test</span>
+            </v-tooltip>
             <img :src="recipe.image" />
         </div>
     </div>
