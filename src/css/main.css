@@ -62,8 +62,8 @@ html {
   padding-bottom: 0px;
 }
 #app #RecipesWrap #RecipesTable .recipe .title-image-wrap h3 {
-  color: #FD8664;
-  font-size: 2.6rem;
+  color: #c52e03;
+  font-size: 3.4rem;
   padding: 10px 20px;
 }
 #app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap {
@@ -75,6 +75,31 @@ html {
   margin: 0px 0px 0px 0px;
   display: inline-block;
   width: 100%;
+}
+#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta .view-recipe-btn {
+  border: 1px solid rgba(108, 102, 89, 0.5);
+  color: #6C6659;
+  display: inline-block;
+  height: auto;
+  font-size: 3rem;
+  padding: 10px;
+}
+#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta .view-recipe-btn:hover {
+  cursor: pointer;
+  background-color: #6C6659;
+  color: #ECDEC3;
+}
+#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta .view-recipe-btn h4 {
+  line-height: 1;
+}
+#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta .view-recipe-btn .v-icon {
+  color: inherit;
+  font-size: 8rem;
 }
 #app #RecipesWrap #RecipesTable .recipe .ingredients-wrap {
   display: grid;
@@ -129,11 +154,15 @@ html {
   align-items: center;
   justify-content: flex-end;
 }
+#app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn:hover {
+  cursor: pointer;
+}
 #app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn span {
   font-size: 1.8rem;
+  line-height: 1;
 }
 #app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn .v-icon {
-  color: red;
+  font-size: 2.9rem;
 }
 #app #IngredientsWrap #AvailableIngredientsList ul {
   list-style-type: none;

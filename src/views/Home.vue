@@ -1,5 +1,5 @@
 <template>
-    <section id="HomeWrap" class="home">
+    <section id="HomeWrap" class="home container">
         <Ingredients />
         <Recipes
             msg="TEst"

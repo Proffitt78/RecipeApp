@@ -1,6 +1,6 @@
 <template>    
     <v-app id="app">
-        <div id="nav">
+        <div id="nav" class="container">
             <router-link to="/"><h1>What's in the motherfuckin' kitchen?</h1></router-link> |
             <router-link to="/about">About</router-link>
         </div>

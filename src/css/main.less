@@ -72,8 +72,8 @@ html{
                     padding-bottom: 0px;
 
                     h3{
-                        color: @text-color1;
-                        font-size: 2.6rem;
+                        color: darken(@text-color1, 30%);
+                        font-size: 3.4rem;
                         padding: 10px 20px;
                     }
 
@@ -89,7 +89,34 @@ html{
                         }
 
                         .meta{
+                            align-items: center;
+                            display: flex;
+                            justify-content: space-around;
 
+                            
+                            .view-recipe-btn{
+                                border: 1px solid fade(#6C6659, 50%);
+                                color: #6C6659;
+                                display: inline-block;
+                                height: auto;
+                                font-size: 3rem;
+                                padding: 10px;
+
+                                &:hover{
+                                    cursor: pointer;    
+                                    background-color: #6C6659;
+                                    color: @panel-color1;                                    
+                                }
+
+                                h4{
+                                    line-height: 1;
+                                }
+
+                                .v-icon{
+                                    color: inherit;
+                                    font-size: 8rem;
+                                }
+                            }
                         }
                     }
 
@@ -166,12 +193,19 @@ html{
                     align-items: center;
                     justify-content: flex-end;
 
+                    &:hover{
+                        cursor: pointer;
+                    }
+
                     span{
                         font-size: 1.8rem;
+                        line-height: 1;
                     }
 
                     .v-icon{
-                        color: red;
+                        // color: red;
+                        // font-weight: 700;
+                        font-size: 2.9rem;
                     }
                 }
             }
