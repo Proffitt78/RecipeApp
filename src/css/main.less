@@ -1,8 +1,37 @@
+@import 'variables.less';
+
+@font-face {
+    font-family: "Gotham";
+    src: url('../fonts/Gotham.otf');
+}
+
+@font-face {
+    font-family: "fontastique";
+    src: url('../fonts/fontastique.ttf');
+}
+
+html{
+    font-size: 10px!important;
+}
+
 #app{
-    background-color: orange;
+    background-color: @body-color;
+    font-family: 'fontastique';
+
+    button{
+        background-color: green;
+        border: 1px solid #000;
+        color: #fff;
+        padding: 5px 20px;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+        font-family: 'Gotham';
+        line-height: 1;
+    }
 
     section{
-        border: 1px solid red;
+        // border: 1px solid red;
     }
 
     #HomeWrap{
@@ -18,13 +47,148 @@
         border-color: green;
 
         h2{
-            color: #fff;
+            color: @text-color2;
+            font-size: 4.4rem;
         }
 
-         .recipe{
-             h3{
-                 color: blue;
-             }
-         }
+        #RecipesTable{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+            row-gap: 40px;
+
+            .recipe{
+                background-color: fade(@panel-color2, 60%);
+
+                &:hover{
+                    background-color: @panel-color2;
+                }
+
+                .title-image-wrap{
+                    background-color: @panel-color1;
+                    line-height: 1;
+                    margin-bottom: 10px;
+                    margin-top: 10px;
+                    padding-bottom: 0px;
+
+                    h3{
+                        color: @text-color1;
+                        font-size: 2.6rem;
+                        padding: 10px 20px;
+                    }
+
+                    .img-meta-wrap{
+                        display: grid;
+                        grid-template-columns: 2fr 1fr;
+
+                        img{
+                            line-height: 1;
+                            margin: 0px 0px 0px 0px;
+                            display: inline-block;
+                            width: 100%;
+                        }
+
+                        .meta{
+
+                        }
+                    }
+
+                }
+    
+                .ingredients-wrap{
+                   display: grid;
+                   grid-template-columns: 1fr 1fr;
+                //    column-gap: 10px;
+
+                    >div{
+                        padding: 10px;
+
+                        &.ingredients-used{
+                            background-color: @used-ingredients-bg;
+
+                            ul{
+                                li{
+                                    border-bottom: 1px solid darken(@used-ingredients-bg, 20%);
+                                }
+                            }
+                        }
+
+                        &.ingredients-missed{
+                            background-color: @missing-ingredients-bg;
+
+                            ul{
+                                li{
+                                    border-bottom: 1px solid darken(@missing-ingredients-bg, 20%);
+                                }
+                            }
+                        }
+
+                        h4{
+                            font-size: 2rem;
+                            margin-bottom: 10px;
+                        }
+
+                        ul{
+                            list-style: none;
+                            list-style-position: inside;
+                            margin: 0px;
+                            padding: 0px;
+
+                            li{
+                                font-size: 1.8rem;
+                            }
+                        }
+                    }    
+                }
+            }
+        }
+    }
+
+    #IngredientsWrap{        
+        padding: 5px;
+
+        #AvailableIngredientsList{
+            background-color: @panel-color1;
+            padding: 10px 20px;
+
+            #AvailableIngredientsListHeader{
+                border-bottom: 1px solid darken(@panel-color1, 20%);
+                display: grid;
+                grid-template-columns: 3fr 2fr;
+                padding-bottom: 5px;
+
+                h3{
+                    font-size: 2.5rem;
+                }
+
+                #DiscardListBtn{
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    span{
+                        font-size: 1.8rem;
+                    }
+
+                    .v-icon{
+                        color: red;
+                    }
+                }
+            }
+
+            ul{
+                list-style-type: none;
+                list-style-position: inside;
+                margin: 0px;
+                padding: 0px;
+
+                li{
+                    border-bottom: 1px solid darken(@panel-color1, 10%);
+                    display: flex;
+                    font-size: 2rem;
+                    justify-content: space-between;
+                }
+            }
+        }
     }
 }

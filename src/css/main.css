@@ -1,8 +1,32 @@
-#app {
-  background-color: orange;
+@font-face {
+  font-family: "Gotham";
+  src: url('../fonts/Gotham.otf');
 }
-#app section {
-  border: 1px solid red;
+@font-face {
+  font-family: "fontastique";
+  src: url('../fonts/fontastique.ttf');
+}
+html {
+  font-size: 10px!important;
+}
+#app {
+  background-color: #E0E6E6;
+  font-family: 'fontastique';
+}
+#app button {
+  background-color: green;
+  border: 1px solid #000;
+  color: #fff;
+  padding: 5px 20px;
+}
+#app h1,
+#app h2,
+#app h3,
+#app h4,
+#app h5,
+#app h6 {
+  font-family: 'Gotham';
+  line-height: 1;
 }
 #app #HomeWrap {
   display: grid;
@@ -15,8 +39,111 @@
   border-color: green;
 }
 #app #RecipesWrap h2 {
-  color: #fff;
+  color: #8AB661;
+  font-size: 4.4rem;
 }
-#app #RecipesWrap .recipe h3 {
-  color: blue;
+#app #RecipesWrap #RecipesTable {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 40px;
+}
+#app #RecipesWrap #RecipesTable .recipe {
+  background-color: rgba(250, 190, 14, 0.6);
+}
+#app #RecipesWrap #RecipesTable .recipe:hover {
+  background-color: #FABE0E;
+}
+#app #RecipesWrap #RecipesTable .recipe .title-image-wrap {
+  background-color: #ECDEC3;
+  line-height: 1;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-bottom: 0px;
+}
+#app #RecipesWrap #RecipesTable .recipe .title-image-wrap h3 {
+  color: #FD8664;
+  font-size: 2.6rem;
+  padding: 10px 20px;
+}
+#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap img {
+  line-height: 1;
+  margin: 0px 0px 0px 0px;
+  display: inline-block;
+  width: 100%;
+}
+#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div {
+  padding: 10px;
+}
+#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div.ingredients-used {
+  background-color: #8AB661;
+}
+#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div.ingredients-used ul li {
+  border-bottom: 1px solid #577938;
+}
+#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div.ingredients-missed {
+  background-color: #FD8664;
+}
+#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div.ingredients-missed ul li {
+  border-bottom: 1px solid #f83a03;
+}
+#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div h4 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div ul {
+  list-style: none;
+  list-style-position: inside;
+  margin: 0px;
+  padding: 0px;
+}
+#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div ul li {
+  font-size: 1.8rem;
+}
+#app #IngredientsWrap {
+  padding: 5px;
+}
+#app #IngredientsWrap #AvailableIngredientsList {
+  background-color: #ECDEC3;
+  padding: 10px 20px;
+}
+#app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader {
+  border-bottom: 1px solid #d3b376;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  padding-bottom: 5px;
+}
+#app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader h3 {
+  font-size: 2.5rem;
+}
+#app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn span {
+  font-size: 1.8rem;
+}
+#app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn .v-icon {
+  color: red;
+}
+#app #IngredientsWrap #AvailableIngredientsList ul {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0px;
+  padding: 0px;
+}
+#app #IngredientsWrap #AvailableIngredientsList ul li {
+  border-bottom: 1px solid #e0c99c;
+  display: flex;
+  font-size: 2rem;
+  justify-content: space-between;
 }

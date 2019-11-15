@@ -13,7 +13,7 @@ export default new Vuex.Store({
             lastName: 'Proffitt'
         },
         ingredients: [],
-        url: "https://webknox-recipes.p.rapidapi.com/recipes/findByIngredients?number=25&ingredients=",
+        url: "https://webknox-recipes.p.rapidapi.com/recipes/findByIngredients?number=24&ingredients=",
         recipes: []
     },
     mutations: {
@@ -28,6 +28,9 @@ export default new Vuex.Store({
         },
         RESET_INGREDIENTS(state){
             state.ingredients = []
+        },
+        REMOVE_INGREDIENT(state, payload){
+            Vue.delete(state.ingredients, payload);
         }
     },
     actions: {
@@ -43,9 +46,20 @@ export default new Vuex.Store({
                 }
             }).then(response => (commit("SET_RECIPES", response.data)))
         },
+        fetchRecipeInformation({ commit }, payload){
+            axios.get('https://webknox-recipes.p.rapidapi.com/recipes/' + payload + '/information', {
+                "headers": {
+                    "x-rapidapi-host": "webknox-recipes.p.rapidapi.com",
+                    "x-rapidapi-key": "5451a1942cmsh24d3eb999c4bbd8p1740ffjsnf0151e7628e5"
+                }
+            }).then(response => (console.log(response.data)));
+        },
         emptyIngredients({commit}){
             commit('RESET_INGREDIENTS')
             commit('SET_RECIPES', [])
+        },
+        removeIngredient({ commit }, payload){
+            commit('REMOVE_INGREDIENT', payload)
         }
     },
     getters: {
@@ -54,6 +68,9 @@ export default new Vuex.Store({
         },
         getIngredientsUrl(state) {
             return state.url + state.ingredients.toString()
+        },
+        getEnteredIngredients(state){
+            return state.ingredients.filter(Boolean)
         }
     },
     modules: {

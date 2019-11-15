@@ -1,26 +1,32 @@
 <template>
     <section id="IngredientsWrap">
-        <h2>Ingredients</h2>
+        <h2>Cupboard</h2>
         <v-form @submit.prevent>
             <v-text-field 
                 ref="ingredientsInput"
-                label="Ingredient"
+                label=""
                 v-model="ingredient"
-                placeholder="Enter Ingredient"
+                placeholder="Enter ingredients you have HERE"
                 v-on:keyup.enter="enterIngredient">
-                <v-icon slot="append" color="red">mdi-plus</v-icon>
-                <v-icon slot="prepend" color="green">mdi-minus</v-icon>
             </v-text-field>
         </v-form>
-        <button @click="emptyIngredientsList">Empty</button>
-        <section class="entered-ingredients-list">
-            <div v-for="(enteredIngredient, index) in ingredients">{{ enteredIngredient }}</div>
+        <section id="AvailableIngredientsList" v-if="getEnteredIngredients.length > 0" class="entered-ingredients-list">
+            <div id="AvailableIngredientsListHeader">
+                <h3>Shit I got in the kitchen</h3>
+                <div id="DiscardListBtn" @click="emptyIngredientsList">
+                    <span>Discard List</span>
+                    <v-icon>mdi-delete-empty-outline</v-icon>
+                </div>
+            </div>
+            <ul>
+                <li v-for="(enteredIngredient, index) in getEnteredIngredients" :key="index"><span>{{ enteredIngredient }}</span><v-icon @click="removeThisIngredient(index)">mdi-delete-circle</v-icon></li>
+            </ul>
         </section>
     </section>
 </template>
 
 <script>
-import { mapState } from "vuex"
+import { mapState, mapGetters } from "vuex"
 
 export default {
     data(){
@@ -29,7 +35,7 @@ export default {
         };
     },
     computed: {
-        ...mapState(["ingredients"])
+        ...mapGetters(["getEnteredIngredients"])
     },
     methods: {
         enterIngredient(){
@@ -39,6 +45,11 @@ export default {
         },
         emptyIngredientsList(){
             this.$store.dispatch('emptyIngredients')
+        },
+        removeThisIngredient(payload){
+            this.$store.dispatch('removeIngredient', payload).then(
+                this.$store.dispatch('fetchApi')
+            )
         }
     }
 }
