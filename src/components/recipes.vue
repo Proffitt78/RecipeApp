@@ -9,7 +9,7 @@
                         <div class="img-meta-wrap">
                             <img :src="recipe.image" />
                             <div class="meta">
-                                <div class="view-recipe-btn" @click="$store.dispatch('fetchRecipeInformation', recipe.id)">
+                                <div class="view-recipe-btn" @click="showDetails(recipe.id)">
                                     <h4>Recipe</h4>
                                     <v-icon>mdi-file-eye</v-icon>
                                 </div>
@@ -35,25 +35,52 @@
                         </div>
                     </section>
                 </div>
+                <v-dialog                 
+                    v-model="dialog" 
+                    class="recipe-details-dialog"
+                    attach>
+                    <div class="dialog-content-helper-wrap">
+                        <v-icon @click="dialog = false">mdi-close-circle</v-icon>
+                        <h2>
+                            <img :src="getRecipeDetails.image" class="recipe-details-image" />
+                            <span class="recipe-details-title">{{ getRecipeDetails.title }}</span>                        
+                        </h2>
+                        <section class="recipe-instructions">
+                            {{ getRecipeDetails.instructions }}
+                        </section>                    
+                        <section class="analyzedInstructions">
+                            {{ getRecipeDetails.analyzedInstructions }}
+                        </section>
+                    </div>
+                </v-dialog>
             </div>
         </div>
     </section>
 </template>
 
 <script>
+    import { mapGetters } from 'vuex'
 
     export default {
         name: 'recipes',
         data() {
             return {
+                dialog: false
             };
         },        
         computed: {
-            
-        },        
+            ...mapGetters(['getRecipeDetails'])
+        },
         props: {
             msg: String,
             listOfRecipes: Array
+        },
+        methods: {
+            showDetails(payload){
+                console.log("payload")
+                this.$store.dispatch('fetchRecipeInformation', payload)
+                this.dialog = true
+            }
         }
     }
 </script>

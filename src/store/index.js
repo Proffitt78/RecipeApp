@@ -13,8 +13,9 @@ export default new Vuex.Store({
             lastName: 'Proffitt'
         },
         ingredients: [],
-        url: "https://webknox-recipes.p.rapidapi.com/recipes/findByIngredients?number=24&ingredients=",
-        recipes: []
+        url: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=6&ranking=1&ignorePantry=false&ingredients=",
+        recipes: [],
+        recipeDetails: {}
     },
     mutations: {
         SET_USER(state, payload) {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
         },
         SET_RECIPES(state, payload) {
             state.recipes = payload
+        },
+        SET_RECIPE_DETAILS(state, payload){
+            state.recipeDetails = payload
         },
         SET_INGREDIENTS(state, payload){
             state.ingredients.push(payload)
@@ -41,18 +45,18 @@ export default new Vuex.Store({
             commit('SET_INGREDIENTS', payload)
             axios.get(this.getters.getIngredientsUrl, {
                 "headers": {
-                    "x-rapidapi-host": "webknox-recipes.p.rapidapi.com",
+                    "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
                     "x-rapidapi-key": "5451a1942cmsh24d3eb999c4bbd8p1740ffjsnf0151e7628e5"
                 }
             }).then(response => (commit("SET_RECIPES", response.data)))
         },
         fetchRecipeInformation({ commit }, payload){
-            axios.get('https://webknox-recipes.p.rapidapi.com/recipes/' + payload + '/information', {
+            axios.get('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + payload + '/information', {
                 "headers": {
-                    "x-rapidapi-host": "webknox-recipes.p.rapidapi.com",
+                    "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
                     "x-rapidapi-key": "5451a1942cmsh24d3eb999c4bbd8p1740ffjsnf0151e7628e5"
                 }
-            }).then(response => (console.log(response.data)));
+            }).then(response => (commit('SET_RECIPE_DETAILS', response.data)));
         },
         emptyIngredients({commit}){
             commit('RESET_INGREDIENTS')
@@ -60,6 +64,9 @@ export default new Vuex.Store({
         },
         removeIngredient({ commit }, payload){
             commit('REMOVE_INGREDIENT', payload)
+        },
+        setDialogVisibility({ commit }){
+            commit('SET_DIALOG_VISIBILITY')
         }
     },
     getters: {
@@ -71,6 +78,12 @@ export default new Vuex.Store({
         },
         getEnteredIngredients(state){
             return state.ingredients.filter(Boolean)
+        },
+        getRecipes(state){
+            return state.recipes
+        },
+        getRecipeDetails(state){
+            return state.recipeDetails
         }
     },
     modules: {

@@ -14,6 +14,13 @@ html{
     font-size: 10px!important;
 }
 
+img{
+    line-height: 1;
+    margin: 0px 0px 0px 0px;
+    display: inline-block;
+    width: 100%;
+}
+
 #app{
     background-color: @body-color;
     font-family: 'fontastique';
@@ -44,7 +51,6 @@ html{
     }
 
     #RecipesWrap{
-        border-color: green;
 
         h2{
             color: @text-color2;
@@ -80,13 +86,6 @@ html{
                     .img-meta-wrap{
                         display: grid;
                         grid-template-columns: 2fr 1fr;
-
-                        img{
-                            line-height: 1;
-                            margin: 0px 0px 0px 0px;
-                            display: inline-block;
-                            width: 100%;
-                        }
 
                         .meta{
                             align-items: center;
@@ -221,6 +220,26 @@ html{
                     display: flex;
                     font-size: 2rem;
                     justify-content: space-between;
+                }
+            }
+        }
+    }
+
+    .recipe-details-dialog{
+        .v-dialog__content{
+            .v-dialog{
+                position: relative;
+
+                .v-icon{
+                    position: absolute;
+                    top: -10px;
+                    right: -10px;
+                    width: auto;
+                }
+
+                h2{
+                    display: grid;
+                    grid-template-columns: 1fr 9fr;
                 }
             }
         }

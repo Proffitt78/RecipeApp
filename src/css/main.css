@@ -9,6 +9,12 @@
 html {
   font-size: 10px!important;
 }
+img {
+  line-height: 1;
+  margin: 0px 0px 0px 0px;
+  display: inline-block;
+  width: 100%;
+}
 #app {
   background-color: #E0E6E6;
   font-family: 'fontastique';
@@ -34,9 +40,6 @@ html {
 }
 #app #HomeWrap > section {
   padding: 15px;
-}
-#app #RecipesWrap {
-  border-color: green;
 }
 #app #RecipesWrap h2 {
   color: #8AB661;
@@ -69,12 +72,6 @@ html {
 #app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap {
   display: grid;
   grid-template-columns: 2fr 1fr;
-}
-#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap img {
-  line-height: 1;
-  margin: 0px 0px 0px 0px;
-  display: inline-block;
-  width: 100%;
 }
 #app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta {
   align-items: center;
@@ -175,4 +172,17 @@ html {
   display: flex;
   font-size: 2rem;
   justify-content: space-between;
+}
+#app .recipe-details-dialog .v-dialog__content .v-dialog {
+  position: relative;
+}
+#app .recipe-details-dialog .v-dialog__content .v-dialog .v-icon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: auto;
+}
+#app .recipe-details-dialog .v-dialog__content .v-dialog h2 {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
 }
