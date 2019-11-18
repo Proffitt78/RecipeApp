@@ -39,6 +39,7 @@
                     v-model="dialog" 
                     class="recipe-details-dialog"
                     attach>
+                    <div class="close-icon-graphical-wrapper"></div>
                     <div class="dialog-content-helper-wrap">
                         <v-icon @click="dialog = false">mdi-close-circle</v-icon>
                         <h2>
@@ -46,10 +47,26 @@
                             <span class="recipe-details-title">{{ getRecipeDetails.title }}</span>                        
                         </h2>
                         <section class="recipe-instructions">
-                            {{ getRecipeDetails.instructions }}
+                            <p>{{ getRecipeDetails.instructions }}</p>                            
                         </section>                    
-                        <section class="analyzedInstructions">
-                            {{ getRecipeDetails.analyzedInstructions }}
+                        <section v-if="true" class="analyzedInstructions">
+                            <ul>
+                                <li v-for="(steps, index) in getRecipeDetails.analyzedInstructions" :key="index">
+                                    <div class="steps-name" v-show="steps.name"><h2>test {{ steps.name }}</h2></div>                                    
+                                    <ul>
+                                        <li class="steps-step" v-for="(step, index) in steps.steps">
+                                            <div>
+                                                <span>
+                                                    {{ index }}
+                                                </span>
+                                                <span>
+                                                    {{ step.step }}
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ul>                                    
+                                </li>
+                            </ul>
                         </section>
                     </div>
                 </v-dialog>

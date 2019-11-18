@@ -10,20 +10,45 @@
     src: url('../fonts/fontastique.ttf');
 }
 
+@font-face {
+    font-family: "Mulberry";
+    src: url('../fonts/Mulberry.ttf');
+}
+
+@font-face {
+    font-family: "Mulberry";
+    src: url('../fonts/Mulberry.ttf');
+}
+
+@font-face {
+    font-family: "CuteFont";
+    src: url('../fonts/Cute_Font.ttf');
+}
+
+@font-face {
+    font-family: "DkHand";
+    src: url('../fonts/DK-Hand.ttf');
+}
+
 html{
     font-size: 10px!important;
 }
 
-img{
-    line-height: 1;
-    margin: 0px 0px 0px 0px;
-    display: inline-block;
-    width: 100%;
-}
 
 #app{
     background-color: @body-color;
     font-family: 'fontastique';
+    
+    img{
+        line-height: 1;
+        margin: 0px 0px 0px 0px;
+        display: inline-block;
+        width: 100%;
+    }
+
+    a{
+        color: inherit;
+    }
 
     button{
         background-color: green;
@@ -33,12 +58,25 @@ img{
     }
 
     h1,h2,h3,h4,h5,h6{
-        font-family: 'Gotham';
+        font-family: 'DkHand';
         line-height: 1;
+        font-weight: 100;
     }
 
     section{
         // border: 1px solid red;
+    }
+
+    #RecipeHeader{
+        background-color: grey;
+
+        #HeaderContent{
+            display: flex;
+            justify-content: space-between;
+
+
+        
+        }
     }
 
     #HomeWrap{
@@ -79,8 +117,20 @@ img{
 
                     h3{
                         color: darken(@text-color1, 30%);
-                        font-size: 3.4rem;
+                        font-size: 1.2rem;
                         padding: 10px 20px;
+
+                        @media(min-width: @screen-sm){
+                            font-size: 1.8rem;
+                        }
+
+                        @media(min-width: @screen-md){
+                            font-size: 2.5rem;
+                        }
+
+                        @media(min-width: @screen-lg){
+                            font-size: 2.5rem;
+                        }
                     }
 
                     .img-meta-wrap{
@@ -226,20 +276,111 @@ img{
     }
 
     .recipe-details-dialog{
+
         .v-dialog__content{
             .v-dialog{
+                border-top-right-radius: 20px;
+                box-shadow: none;
                 position: relative;
+                padding: 20px;
 
-                .v-icon{
+                .close-icon-graphical-wrapper{
+                    background-color: @panel-color1;
+                    border: 2px solid @panel-color2;
+                    border-radius: 50%;
+                    height: 59px;
+                    right: 11px;
                     position: absolute;
-                    top: -10px;
-                    right: -10px;
-                    width: auto;
+                    top: 12px;
+                    width: 59px;
+                    z-index: 10;
                 }
+                
+                .dialog-content-helper-wrap{
+                    background-color: @panel-color1;
+                    border: 2px solid @panel-color2;
+                    border-right: 3px solid @panel-color2;
+                    border-top-right-radius: 25px;
+                    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 
+                                0 24px 38px 3px rgba(0,0,0,.14), 
+                                0 9px 46px 8px rgba(0,0,0,.12);
+                                position: relative;
+                    z-index: 20;
 
-                h2{
-                    display: grid;
-                    grid-template-columns: 1fr 9fr;
+                    .v-icon{
+                        border-radius: 50%;
+                        background-color: @panel-color1;
+                        font-size: 4.7rem;
+                        position: absolute;
+                        right: -9px;
+                        top: -8px;
+                        padding: 3px;
+                        width: auto;
+                        z-index: 30;
+                    }
+    
+                    h2{
+                        border-bottom: 1px solid darken(@panel-color1, 20%);
+                        display: grid;
+                        grid-template-columns: 1fr 9fr;
+
+                        .recipe-details-image{
+                            min-width: 200px;
+                        }
+    
+                        .recipe-details-title{
+                            align-items: center;               
+                            color: #863333;//@text-color2;
+                            display: flex;
+                            padding: 10px 20px 5px 15px;
+                        }
+                    }
+    
+                    section{
+                        
+                        &.recipe-instructions{
+                            margin-bottom: 30px;
+                            padding: 20px;
+                            
+                            
+                            p{
+                                // border: 1px solid darken(@panel-color1, 20%);
+                                font-size: 1.8rem;
+                                padding: 20px;
+                            }
+                        }
+
+                        &.analyzedInstructions{
+                            padding: 20px;
+
+                            >ul{
+                                list-style-type: none;
+                                list-style-position: inside;
+                                margin: 0px;
+                                padding: 0px;
+
+                                >li{
+
+                                    .steps-name{
+                                        color: red;
+                                        font-size: 50px;
+                                    }
+
+
+                                    >ul{
+                                        list-style: none;
+                                        list-style-position: inside;
+                                        margin-bottom: 50px;
+                                        padding: 0px;
+
+                                        li{
+                                            font-size: 1.8rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
