@@ -1,18 +1,13 @@
 @import 'variables.less';
 
 @font-face {
-    font-family: "Gotham";
-    src: url('../fonts/Gotham.otf');
+    font-family: "TrashHand";
+    src: url('../fonts/TrashHand.TTF');
 }
 
 @font-face {
     font-family: "fontastique";
     src: url('../fonts/fontastique.ttf');
-}
-
-@font-face {
-    font-family: "Mulberry";
-    src: url('../fonts/Mulberry.ttf');
 }
 
 @font-face {
@@ -28,6 +23,16 @@
 @font-face {
     font-family: "DkHand";
     src: url('../fonts/DK-Hand.ttf');
+}
+
+@font-face {
+    font-family: "ChalkBoard";
+    src: url('../fonts/chalkboard.ttf');
+}
+
+@font-face {
+    font-family: "angelina";
+    src: url('../fonts/angelina.TTF');
 }
 
 html{
@@ -58,7 +63,7 @@ html{
     }
 
     h1,h2,h3,h4,h5,h6{
-        font-family: 'DkHand';
+        font-family: 'angelina';
         line-height: 1;
         font-weight: 100;
     }
@@ -112,12 +117,20 @@ html{
                     background-color: @panel-color1;
                     line-height: 1;
                     margin-bottom: 10px;
-                    margin-top: 10px;
                     padding-bottom: 0px;
 
-                    h3{
-                        color: darken(@text-color1, 30%);
-                        font-size: 1.2rem;
+                    h3{        
+                        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#57565a+0,28272d+51,242226+100 */
+                        background: #57565a; /* Old browsers */
+                        background: -moz-linear-gradient(45deg,  #57565a 0%, #28272d 51%, #242226 100%); /* FF3.6-15 */
+                        background: -webkit-linear-gradient(45deg,  #57565a 0%,#28272d 51%,#242226 100%); /* Chrome10-25,Safari5.1-6 */
+                        background: linear-gradient(45deg,  #57565a 0%,#28272d 51%,#242226 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57565a', endColorstr='#242226',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+                
+                        border-bottom: 1px solid darken(@panel-color1, 20%);
+                        color: #fff;
+                        font-size: 1.4rem;
+                        font-weight: 100;
                         padding: 10px 20px;
 
                         @media(min-width: @screen-sm){
@@ -125,15 +138,20 @@ html{
                         }
 
                         @media(min-width: @screen-md){
-                            font-size: 2.5rem;
+                            font-size: 2.8rem;
                         }
 
                         @media(min-width: @screen-lg){
-                            font-size: 2.5rem;
+                            font-size: 2.8rem;
                         }
                     }
 
                     .img-meta-wrap{
+                        background: #57565a; /* Old browsers */
+                        background: -moz-linear-gradient(45deg,  #57565a 0%, #28272d 51%, #242226 100%); /* FF3.6-15 */
+                        background: -webkit-linear-gradient(45deg,  #57565a 0%,#28272d 51%,#242226 100%); /* Chrome10-25,Safari5.1-6 */
+                        background: linear-gradient(45deg,  #57565a 0%,#28272d 51%,#242226 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57565a', endColorstr='#242226',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
                         display: grid;
                         grid-template-columns: 2fr 1fr;
 
@@ -321,6 +339,9 @@ html{
     
                     h2{
                         border-bottom: 1px solid darken(@panel-color1, 20%);
+
+                        box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+
                         display: grid;
                         grid-template-columns: 1fr 9fr;
 
