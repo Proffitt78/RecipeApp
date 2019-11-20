@@ -1,5 +1,5 @@
 <template>
-    <section id="RecipesWrap">
+    <section id="RecipesPanel">
         <div id="Recipes">
             <h2>Recipes {{ msg }}</h2>
             <div id="RecipesTable">
@@ -9,7 +9,7 @@
                         <div class="img-meta-wrap">
                             <img :src="recipe.image" />
                             <div class="meta">
-                                <div class="view-recipe-btn" @click="showDetails(recipe.id)">
+                                <div class="view-recipe-btn" @click="fetchRecipeInformation(recipe.id)">
                                     <h4>Recipe</h4>
                                     <v-icon>mdi-file-eye</v-icon>
                                 </div>
@@ -36,12 +36,12 @@
                     </section>
                 </div>
                 <v-dialog                 
-                    v-model="dialog" 
+                    v-model="getDialogVisibility" 
                     class="recipe-details-dialog"
                     attach>
                     <div class="close-icon-graphical-wrapper"></div>
                     <div class="dialog-content-helper-wrap">
-                        <v-icon @click="dialog = false">mdi-close-circle</v-icon>
+                        <v-icon @click="setDialogVisibility">mdi-close-circle</v-icon>
                         <h2>
                             <img :src="getRecipeDetails.image" class="recipe-details-image" />
                             <span class="recipe-details-title">{{ getRecipeDetails.title }}</span>                        
@@ -56,7 +56,7 @@
                                     <ul>
                                         <li class="steps-step" v-for="(step, index) in steps.steps">
                                             <div>
-                                                <span>
+                                                <span class="recipe-number">
                                                     {{ index }}
                                                 </span>
                                                 <span>
@@ -76,28 +76,24 @@
 </template>
 
 <script>
-    import { mapGetters } from 'vuex'
+    import { mapGetters, mapActions } from 'vuex'
 
     export default {
-        name: 'recipes',
+        name: 'recipes-panel',
         data() {
             return {
                 dialog: false
             };
         },        
         computed: {
-            ...mapGetters(['getRecipeDetails'])
+            ...mapGetters(['getRecipeDetails', 'getDialogVisibility'])
         },
         props: {
             msg: String,
             listOfRecipes: Array
         },
         methods: {
-            showDetails(payload){
-                console.log("payload")
-                this.$store.dispatch('fetchRecipeInformation', payload)
-                this.dialog = true
-            }
+            ...mapActions(['fetchRecipeInformation', 'setDialogVisibility'])
         }
     }
 </script>

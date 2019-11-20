@@ -15,7 +15,8 @@ export default new Vuex.Store({
         ingredients: [],
         url: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=6&ranking=1&ignorePantry=false&ingredients=",
         recipes: [],
-        recipeDetails: {}
+        recipeDetails: {},
+        dialogVisibility: false
     },
     mutations: {
         SET_USER(state, payload) {
@@ -35,6 +36,9 @@ export default new Vuex.Store({
         },
         REMOVE_INGREDIENT(state, payload){
             Vue.delete(state.ingredients, payload);
+        },
+        SET_DIALOG_VISIBILITY(state){
+            state.dialogVisibility = !state.dialogVisibility
         }
     },
     actions: {
@@ -50,13 +54,16 @@ export default new Vuex.Store({
                 }
             }).then(response => (commit("SET_RECIPES", response.data)))
         },
-        fetchRecipeInformation({ commit }, payload){
-            axios.get('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + payload + '/information', {
+        async fetchRecipeInformation({ commit }, payload){
+            await axios.get('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + payload + '/information', {
                 "headers": {
                     "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
                     "x-rapidapi-key": "5451a1942cmsh24d3eb999c4bbd8p1740ffjsnf0151e7628e5"
                 }
-            }).then(response => (commit('SET_RECIPE_DETAILS', response.data)));
+            }).then(async (response) => {
+                await commit('SET_RECIPE_DETAILS', response.data)
+                commit('SET_DIALOG_VISIBILITY')
+            });
         },
         emptyIngredients({commit}){
             commit('RESET_INGREDIENTS')
@@ -84,6 +91,9 @@ export default new Vuex.Store({
         },
         getRecipeDetails(state){
             return state.recipeDetails
+        },
+        getDialogVisibility(state){
+            return state.dialogVisibility
         }
     },
     modules: {

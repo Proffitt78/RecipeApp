@@ -1,3 +1,137 @@
+#RecipesWrap h2 {
+  color: #8AB661;
+  font-size: 4.4rem;
+}
+#RecipesWrap #RecipesTable {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 40px;
+}
+#RecipesWrap #RecipesTable .recipe {
+  background-color: rgba(250, 190, 14, 0.6);
+  display: grid;
+  grid-template-rows: minmax(1fr, 227px) auto;
+}
+#RecipesWrap #RecipesTable .recipe:hover {
+  background-color: #FABE0E;
+}
+#RecipesWrap #RecipesTable .recipe .title-image-wrap {
+  background-color: #ECDEC3;
+  line-height: 1;
+  margin-bottom: 10px;
+  padding-bottom: 0px;
+}
+#RecipesWrap #RecipesTable .recipe .title-image-wrap h3 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#57565a+0,28272d+51,242226+100 */
+  background: #57565a;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #57565a 0%, #28272d 51%, #242226 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #57565a 0%, #28272d 51%, #242226 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #57565a 0%, #28272d 51%, #242226 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#57565a', endColorstr='#242226', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+  border-bottom: 1px solid #d3b376;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 100;
+  padding: 10px 20px;
+}
+@media (min-width: 420px) {
+  #RecipesWrap #RecipesTable .recipe .title-image-wrap h3 {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 768px) {
+  #RecipesWrap #RecipesTable .recipe .title-image-wrap h3 {
+    font-size: 2.8rem;
+  }
+}
+@media (min-width: 1280) {
+  #RecipesWrap #RecipesTable .recipe .title-image-wrap h3 {
+    font-size: 2.8rem;
+  }
+}
+#RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap {
+  background: #57565a;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #57565a 0%, #28272d 51%, #242226 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #57565a 0%, #28272d 51%, #242226 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #57565a 0%, #28272d 51%, #242226 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#57565a', endColorstr='#242226', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+#RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+#RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta .view-recipe-btn {
+  border: 1px solid rgba(108, 102, 89, 0.5);
+  color: #6C6659;
+  display: inline-block;
+  height: auto;
+  font-size: 3rem;
+  padding: 10px;
+}
+#RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta .view-recipe-btn:hover {
+  cursor: pointer;
+  background-color: #6C6659;
+  color: #ECDEC3;
+}
+#RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta .view-recipe-btn h4 {
+  line-height: 1;
+}
+#RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta .view-recipe-btn .v-icon {
+  color: inherit;
+  font-size: 8rem;
+}
+#RecipesWrap #RecipesTable .recipe .ingredients-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#RecipesWrap #RecipesTable .recipe .ingredients-wrap > div {
+  padding: 10px;
+}
+#RecipesWrap #RecipesTable .recipe .ingredients-wrap > div.ingredients-used {
+  background-color: #8AB661;
+}
+#RecipesWrap #RecipesTable .recipe .ingredients-wrap > div.ingredients-used ul li {
+  border-bottom: 1px solid #577938;
+}
+#RecipesWrap #RecipesTable .recipe .ingredients-wrap > div.ingredients-missed {
+  background-color: #FD8664;
+}
+#RecipesWrap #RecipesTable .recipe .ingredients-wrap > div.ingredients-missed ul li {
+  border-bottom: 1px solid #f83a03;
+}
+#RecipesWrap #RecipesTable .recipe .ingredients-wrap > div h4 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+#RecipesWrap #RecipesTable .recipe .ingredients-wrap > div ul {
+  list-style: none;
+  list-style-position: inside;
+  margin: 0px;
+  padding: 0px;
+}
+#RecipesWrap #RecipesTable .recipe .ingredients-wrap > div ul li {
+  font-size: 1.8rem;
+}
+#RecipesPanel {
+  border: 3px solid orange;
+}
+#CupboardWrap {
+  border: 2px solid green;
+}
 @font-face {
   font-family: "TrashHand";
   src: url('../fonts/TrashHand.TTF');
@@ -72,175 +206,6 @@ html {
 #app #HomeWrap > section {
   padding: 15px;
 }
-#app #RecipesWrap h2 {
-  color: #8AB661;
-  font-size: 4.4rem;
-}
-#app #RecipesWrap #RecipesTable {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
-  row-gap: 40px;
-}
-#app #RecipesWrap #RecipesTable .recipe {
-  background-color: rgba(250, 190, 14, 0.6);
-}
-#app #RecipesWrap #RecipesTable .recipe:hover {
-  background-color: #FABE0E;
-}
-#app #RecipesWrap #RecipesTable .recipe .title-image-wrap {
-  background-color: #ECDEC3;
-  line-height: 1;
-  margin-bottom: 10px;
-  padding-bottom: 0px;
-}
-#app #RecipesWrap #RecipesTable .recipe .title-image-wrap h3 {
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#57565a+0,28272d+51,242226+100 */
-  background: #57565a;
-  /* Old browsers */
-  background: -moz-linear-gradient(45deg, #57565a 0%, #28272d 51%, #242226 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #57565a 0%, #28272d 51%, #242226 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #57565a 0%, #28272d 51%, #242226 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#57565a', endColorstr='#242226', GradientType=1);
-  /* IE6-9 fallback on horizontal gradient */
-  border-bottom: 1px solid #d3b376;
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 100;
-  padding: 10px 20px;
-}
-@media (min-width: 420px) {
-  #app #RecipesWrap #RecipesTable .recipe .title-image-wrap h3 {
-    font-size: 1.8rem;
-  }
-}
-@media (min-width: 768px) {
-  #app #RecipesWrap #RecipesTable .recipe .title-image-wrap h3 {
-    font-size: 2.8rem;
-  }
-}
-@media (min-width: 1280) {
-  #app #RecipesWrap #RecipesTable .recipe .title-image-wrap h3 {
-    font-size: 2.8rem;
-  }
-}
-#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap {
-  background: #57565a;
-  /* Old browsers */
-  background: -moz-linear-gradient(45deg, #57565a 0%, #28272d 51%, #242226 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #57565a 0%, #28272d 51%, #242226 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #57565a 0%, #28272d 51%, #242226 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#57565a', endColorstr='#242226', GradientType=1);
-  /* IE6-9 fallback on horizontal gradient */
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta {
-  align-items: center;
-  display: flex;
-  justify-content: space-around;
-}
-#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta .view-recipe-btn {
-  border: 1px solid rgba(108, 102, 89, 0.5);
-  color: #6C6659;
-  display: inline-block;
-  height: auto;
-  font-size: 3rem;
-  padding: 10px;
-}
-#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta .view-recipe-btn:hover {
-  cursor: pointer;
-  background-color: #6C6659;
-  color: #ECDEC3;
-}
-#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta .view-recipe-btn h4 {
-  line-height: 1;
-}
-#app #RecipesWrap #RecipesTable .recipe .title-image-wrap .img-meta-wrap .meta .view-recipe-btn .v-icon {
-  color: inherit;
-  font-size: 8rem;
-}
-#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div {
-  padding: 10px;
-}
-#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div.ingredients-used {
-  background-color: #8AB661;
-}
-#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div.ingredients-used ul li {
-  border-bottom: 1px solid #577938;
-}
-#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div.ingredients-missed {
-  background-color: #FD8664;
-}
-#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div.ingredients-missed ul li {
-  border-bottom: 1px solid #f83a03;
-}
-#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div h4 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div ul {
-  list-style: none;
-  list-style-position: inside;
-  margin: 0px;
-  padding: 0px;
-}
-#app #RecipesWrap #RecipesTable .recipe .ingredients-wrap > div ul li {
-  font-size: 1.8rem;
-}
-#app #IngredientsWrap {
-  padding: 5px;
-}
-#app #IngredientsWrap #AvailableIngredientsList {
-  background-color: #ECDEC3;
-  padding: 10px 20px;
-}
-#app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader {
-  border-bottom: 1px solid #d3b376;
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  padding-bottom: 5px;
-}
-#app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader h3 {
-  font-size: 2.5rem;
-}
-#app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-#app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn:hover {
-  cursor: pointer;
-}
-#app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn span {
-  font-size: 1.8rem;
-  line-height: 1;
-}
-#app #IngredientsWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn .v-icon {
-  font-size: 2.9rem;
-}
-#app #IngredientsWrap #AvailableIngredientsList ul {
-  list-style-type: none;
-  list-style-position: inside;
-  margin: 0px;
-  padding: 0px;
-}
-#app #IngredientsWrap #AvailableIngredientsList ul li {
-  border-bottom: 1px solid #e0c99c;
-  display: flex;
-  font-size: 2rem;
-  justify-content: space-between;
-}
 #app .recipe-details-dialog .v-dialog__content .v-dialog {
   border-top-right-radius: 20px;
   box-shadow: none;
@@ -311,8 +276,13 @@ html {
   padding: 0px;
 }
 #app .recipe-details-dialog .v-dialog__content .v-dialog .dialog-content-helper-wrap section.analyzedInstructions > ul > li .steps-name {
-  color: red;
   font-size: 50px;
+}
+#app .recipe-details-dialog .v-dialog__content .v-dialog .dialog-content-helper-wrap section.analyzedInstructions > ul > li .steps-name h3 {
+  box-shadow: none;
+  color: #FD8664;
+  display: block;
+  font-size: 2.8rem;
 }
 #app .recipe-details-dialog .v-dialog__content .v-dialog .dialog-content-helper-wrap section.analyzedInstructions > ul > li > ul {
   list-style: none;
@@ -322,4 +292,7 @@ html {
 }
 #app .recipe-details-dialog .v-dialog__content .v-dialog .dialog-content-helper-wrap section.analyzedInstructions > ul > li > ul li {
   font-size: 1.8rem;
+}
+#app .recipe-details-dialog .v-dialog__content .v-dialog .dialog-content-helper-wrap section.analyzedInstructions > ul > li > ul li .recipe-number {
+  color: red;
 }

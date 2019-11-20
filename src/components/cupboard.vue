@@ -1,5 +1,5 @@
 <template>
-    <section id="IngredientsWrap">
+    <section id="CupboardWrap">
         <h2>Cupboard</h2>
         <v-form @submit.prevent>
             <v-text-field 

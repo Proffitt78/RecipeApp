@@ -1,7 +1,7 @@
 <template>
-    <section id="HomeWrap" class="home container">
-        <Ingredients />
-        <Recipes
+    <section id="HomeWrap" class="home container">        
+        <Cupboard />
+        <RecipesPanel
             msg="TEst"
             :listOfRecipes="getRecipes"/>
     </section>
@@ -9,15 +9,15 @@
 
 <script>
 // @ is an alias to /src
-import Ingredients from '@/components/ingredients.vue'
-import Recipes from '@/components/recipes.vue'
+import Cupboard from '@/components/cupboard.vue'
+import RecipesPanel from '@/components/recipes-panel.vue'
 import { mapGetters } from "vuex"
 
 export default {
     name: 'home',
     components: {
-        Recipes,
-        Ingredients
+        RecipesPanel,
+        Cupboard
     },
     computed: {
         ...mapGetters(["getRecipes"])
