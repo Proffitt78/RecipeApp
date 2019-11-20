@@ -8,10 +8,12 @@
                 </div>                
             </div>
         </header>
-        <router-view/>
+        <section id="MainView">
+            <router-view/>
+        </section>
         <footer id="RecipeFooter">
             <div id="FooterContent">
-                The fucking footer yo                
+                <p>Joey Proffitt</p>                
             </div>
         </footer>
     </v-app>
