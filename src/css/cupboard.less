@@ -1,5 +1,25 @@
 #CupboardWrap{       
-    padding: 5px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 30px 1fr 150px;
+    // padding: 5px;
+    position: relative;
+    height: calc(100% - 0px);
+
+    #CupboardHeader{
+        // position: absolute;
+    }
+    
+    #CupboardContents{
+        overflow: auto;
+        // position: fixed;
+        // left: 0px;
+        // height: calc(100% - 185px);
+    }
+
+    #CupboardDrawer{
+        background-color: @panel-color2;
+    }
 
     #AvailableIngredientsList{
         background-color: @panel-color1;

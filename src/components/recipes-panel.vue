@@ -1,7 +1,6 @@
 <template>
     <section id="RecipesPanel">
         <div id="Recipes">
-            <h2>Recipes {{ msg }}</h2>
             <div id="RecipesTable">
                 <div class="recipe" v-for="(recipe, index) in listOfRecipes" :key="index">
                     <div class="title-image-wrap">
@@ -39,6 +38,7 @@
                     v-model="getDialogVisibility" 
                     class="recipe-details-dialog"
                     attach>
+                    <div class="bg-images" :style="{backgroundImage:'url(' + getRecipeDetails.image + ')'}"></div>
                     <div class="close-icon-graphical-wrapper"></div>
                     <div class="dialog-content-helper-wrap">
                         <v-icon @click="setDialogVisibility">mdi-close-circle</v-icon>

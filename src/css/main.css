@@ -1,3 +1,8 @@
+#RecipesPanel {
+  height: 100%;
+  overflow: auto;
+  padding-top: 0px;
+}
 #RecipesPanel h2 {
   color: #8AB661;
   font-size: 4.4rem;
@@ -127,7 +132,17 @@
   font-size: 1.8rem;
 }
 #CupboardWrap {
-  padding: 5px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-rows: 30px 1fr 150px;
+  position: relative;
+  height: calc(100% - 0px);
+}
+#CupboardWrap #CupboardContents {
+  overflow: auto;
+}
+#CupboardWrap #CupboardDrawer {
+  background-color: #FABE0E;
 }
 #CupboardWrap #AvailableIngredientsList {
   background-color: #ECDEC3;
@@ -169,7 +184,27 @@
   font-size: 2rem;
   justify-content: space-between;
 }
+.recipe-details-dialog .bg-images {
+  opacity: 0;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.recipe-details-dialog .v-dialog__content.v-dialog__content--active {
+  background-color: black;
+  transition: background-color 1s;
+}
+.recipe-details-dialog .v-dialog__content.v-dialog__content--active .bg-images {
+  opacity: 0.5;
+  transition: opacity 1.3s;
+}
 .recipe-details-dialog .v-dialog__content .v-dialog {
+  max-width: 1200px;
   border-top-right-radius: 20px;
   box-shadow: none;
   position: relative;
@@ -315,10 +350,22 @@ html {
   text-decoration: none;
 }
 #app > .v-application--wrap #MainView {
-  overflow: auto;
+  overflow: hidden;
 }
 #app > .v-application--wrap #RecipeFooter {
   background-color: #FD8664;
+}
+#app > .v-application--wrap #RecipeFooter #FooterContent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+}
+#app > .v-application--wrap #RecipeFooter #FooterContent p {
+  color: #fff;
+  font-size: 1.6rem;
+  margin: 0px;
 }
 #app img {
   line-height: 1;
@@ -348,7 +395,5 @@ html {
 #HomeWrap {
   display: grid;
   grid-template-columns: 1fr 2fr;
-}
-#HomeWrap > section {
-  padding: 15px;
+  height: 100%;
 }

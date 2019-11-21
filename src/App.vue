@@ -13,7 +13,7 @@
         </section>
         <footer id="RecipeFooter">
             <div id="FooterContent">
-                <p>Joey Proffitt</p>                
+                <p>Joey Proffitt <span>&copy;{{ thisYear }}</span></p>
             </div>
         </footer>
     </v-app>
@@ -23,7 +23,7 @@
 export default {
     data(){
         return {
-
+            thisYear: '2019'
         };
     },
     created(){
