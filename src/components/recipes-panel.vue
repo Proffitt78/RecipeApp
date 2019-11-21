@@ -28,12 +28,19 @@
                             <h4>What you <span>don't</span> got.</h4>
                             <ul>
                                 <li v-for="(ingredient, index) in recipe.missedIngredients" class="ingredient">
-                                    {{ ingredient.name }}
+                                    <v-icon>mdi-transfer-left</v-icon>
+                                    <div>
+                                        <span>{{ ingredient.name }}</span>
+                                        <v-icon>mdi-cart-arrow-down</v-icon>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
                     </section>
                 </div>
+
+
+                <!-- RECIPE DETAILS -->
                 <v-dialog                 
                     v-model="getDialogVisibility" 
                     class="recipe-details-dialog"
