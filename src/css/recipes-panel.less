@@ -138,10 +138,27 @@
                                 text-align: right;
                                 display: flex;
                                 justify-content: space-between;
-                                // border-bottom: 1px solid darken(@missing-ingredients-bg, 20%);
+                                
+                                >.v-icon{
+                                    color: red;
+                                    left: 30px;
+                                    opacity: 0;
+                                    position: relative;
+                                }
+
+                                &:hover{
+
+                                    >.v-icon{
+                                        color: green;
+                                        cursor: pointer;
+                                        left: 0px;
+                                        opacity: 1;
+                                        transition: left .3s ease 0s, color .2s ease .3s;
+                                    }
+                                }
 
                                 >div{
-                                    
+
                                     span{
                                         display: inline-block;
                                         margin-right: 5px;

@@ -28,7 +28,7 @@
                             <h4>What you <span>don't</span> got.</h4>
                             <ul>
                                 <li v-for="(ingredient, index) in recipe.missedIngredients" class="ingredient">
-                                    <v-icon>mdi-transfer-left</v-icon>
+                                    <v-icon @click="fetchApi(ingredient.name)">mdi-transfer-left</v-icon>
                                     <div>
                                         <span>{{ ingredient.name }}</span>
                                         <v-icon>mdi-cart-arrow-down</v-icon>
@@ -42,7 +42,7 @@
 
                 <!-- RECIPE DETAILS -->
                 <v-dialog                 
-                    v-model="getDialogVisibility" 
+                    v-model="getDialogVisibility"
                     class="recipe-details-dialog"
                     attach>
                     <div class="bg-images" :style="{backgroundImage:'url(' + getRecipeDetails.image + ')'}"></div>
@@ -100,7 +100,7 @@
             listOfRecipes: Array
         },
         methods: {
-            ...mapActions(['fetchRecipeInformation', 'setDialogVisibility'])
+            ...mapActions(['fetchRecipeInformation', 'setDialogVisibility', 'fetchApi'])
         }
     }
 </script>
