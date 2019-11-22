@@ -1,12 +1,12 @@
 <template>
     <section id="ShoppingListWrap">
-        <dif id="ShoppingList">
+        <div id="ShoppingList">
             <ul>
                 <li v-for="(item, index) in getShoppingList" class="shopping-list-item">
                     {{ item.name }}
                 </li>
             </ul>
-        </dif>
+        </div>
     </section>
 </template>
 
@@ -15,6 +15,7 @@ import { mapGetters, mapActions } from "vuex"
 
 
 export default {
+    name: 'shopping-list',
     data(){
         return{
 

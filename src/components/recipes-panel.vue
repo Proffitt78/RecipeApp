@@ -29,7 +29,7 @@
                         <div class="ingredients-missed">
                             <h4>What you <span>don't</span> got.</h4>
                             <ul>
-                                <li v-for="(ingredient, index) in recipe.missedIngredients" class="ingredient">
+                                <li v-for="(ingredient, index) in recipe.missedIngredients" class="ingredient"  :class="{'in-cart': getShoppingList.find(function(x) {return x.id == ingredient.id})}">
                                     <v-icon @click="fetchApi(ingredient.name)">mdi-transfer-left</v-icon>
                                     <div class="missed-ingredient">
                                         <span>{{ ingredient.name }}</span>
@@ -95,7 +95,7 @@
             };
         },        
         computed: {
-            ...mapGetters(['getRecipeDetails', 'getDialogVisibility'])
+            ...mapGetters(['getRecipeDetails', 'getDialogVisibility', 'getShoppingList'])
         },
         props: {
             msg: String,

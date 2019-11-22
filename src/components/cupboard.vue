@@ -26,7 +26,7 @@
         </div>
         <div id="CupboardDrawer">
             <p>Put the shopping list here</p>
-            <shopping-list></shopping-list>
+            <ShoppingList />
         </div>        
     </section>
 </template>

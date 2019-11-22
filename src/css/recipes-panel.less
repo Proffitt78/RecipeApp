@@ -147,7 +147,20 @@
                                     color: red;
                                     text-align: right;
                                     display: flex;
-                                    justify-content: space-between;                                    
+                                    justify-content: space-between;    
+                                    
+                                    &.in-cart{
+                                        color: green;
+                                        opacity: .5;
+                                        pointer-events: none;
+                                        
+                                        >.missed-ingredient{
+                                            
+                                            .v-icon{
+                                                color: green;
+                                            }
+                                        }
+                                    }
                                     
                                     >.v-icon{
                                         color: red;
