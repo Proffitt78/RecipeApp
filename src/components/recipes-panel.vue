@@ -6,7 +6,9 @@
                     <div class="title-image-wrap">
                         <h3>{{ recipe.title }}</h3>
                         <div class="img-meta-wrap">
-                            <img :src="recipe.image" />
+                            <div class="recipe-image-wrap">
+                                <img :src="recipe.image" />
+                            </div>
                             <div class="meta">
                                 <div class="view-recipe-btn" @click="fetchRecipeInformation(recipe.id)">
                                     <h4>Recipe</h4>
@@ -29,9 +31,9 @@
                             <ul>
                                 <li v-for="(ingredient, index) in recipe.missedIngredients" class="ingredient">
                                     <v-icon @click="fetchApi(ingredient.name)">mdi-transfer-left</v-icon>
-                                    <div>
+                                    <div class="missed-ingredient">
                                         <span>{{ ingredient.name }}</span>
-                                        <v-icon>mdi-cart-arrow-down</v-icon>
+                                        <v-icon @click="addToShoppingList(ingredient)">mdi-cart-arrow-down</v-icon>
                                     </div>
                                 </li>
                             </ul>
@@ -100,7 +102,7 @@
             listOfRecipes: Array
         },
         methods: {
-            ...mapActions(['fetchRecipeInformation', 'setDialogVisibility', 'fetchApi'])
+            ...mapActions(['fetchRecipeInformation', 'setDialogVisibility', 'fetchApi', 'addToShoppingList'])
         }
     }
 </script>

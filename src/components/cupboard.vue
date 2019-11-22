@@ -26,18 +26,23 @@
         </div>
         <div id="CupboardDrawer">
             <p>Put the shopping list here</p>
+            <shopping-list></shopping-list>
         </div>        
     </section>
 </template>
 
 <script>
 import { mapState, mapGetters } from "vuex"
+import ShoppingList from '@/components/shopping-list.vue'
 
 export default {
     data(){
         return{
             ingredient: ''
         };
+    },
+    components: {
+        ShoppingList
     },
     computed: {
         ...mapGetters(["getEnteredIngredients"])

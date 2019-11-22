@@ -1,5 +1,5 @@
 <template>
-    <section id="HomeWrap" class="home container">        
+    <section id="HomeWrap" class="home app-container">        
         <Cupboard />
         <RecipesPanel
             msg="TEst"

@@ -16,7 +16,8 @@ export default new Vuex.Store({
         url: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=6&ranking=1&ignorePantry=false&ingredients=",
         recipes: [],
         recipeDetails: {},
-        dialogVisibility: false
+        dialogVisibility: false,
+        shoppingList: []
     },
     mutations: {
         SET_USER(state, payload) {
@@ -39,6 +40,9 @@ export default new Vuex.Store({
         },
         SET_DIALOG_VISIBILITY(state){
             state.dialogVisibility = !state.dialogVisibility
+        },
+        SET_SHOPPING_LIST(state, payload){
+            state.shoppingList.push(payload)
         }
     },
     actions: {
@@ -74,6 +78,9 @@ export default new Vuex.Store({
         },
         setDialogVisibility({ commit }){
             commit('SET_DIALOG_VISIBILITY')
+        },
+        addToShoppingList({ commit }, payload){
+            commit('SET_SHOPPING_LIST', payload)
         }
     },
     getters: {
@@ -94,6 +101,9 @@ export default new Vuex.Store({
         },
         getDialogVisibility(state){
             return state.dialogVisibility
+        },
+        getShoppingList(state){
+            return state.shoppingList
         }
     },
     modules: {
