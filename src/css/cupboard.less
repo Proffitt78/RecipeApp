@@ -3,7 +3,6 @@
     border-right: 20px solid #2C2B31;
     display: grid;
     grid-template-rows: 30px 1fr 150px;
-    // padding: 5px;
     position: relative;
     height: calc(100% - 0px);
     z-index: 10;
@@ -14,9 +13,7 @@
     
     #CupboardContents{
         overflow: auto;
-        // position: fixed;
-        // left: 0px;
-        // height: calc(100% - 185px);
+        padding: 0px 15px 0px;
     }
 
     #CupboardDrawer{
@@ -24,8 +21,11 @@
     }
 
     #AvailableIngredientsList{
-        background-color: @panel-color1;
-        padding: 10px 20px;
+        background-color: #fffcf7;
+        border: 3px inset #676b71;
+        box-shadow: -5px 6px 9px darken(@body-color, 20%);
+        border-radius: 10px;
+        padding: 10px 20px 30px;
 
         #AvailableIngredientsListHeader{
             border-bottom: 1px solid darken(@panel-color1, 20%);
@@ -70,6 +70,26 @@
                 display: flex;
                 font-size: 2rem;
                 justify-content: space-between;
+
+                span{
+                    color: #757bce;
+                }
+
+                &:nth-of-type(odd){
+
+                    span{
+                        font-style: italic;
+                        transform: rotate(-2deg);
+                    }
+                }
+
+                &:nth-of-type(even){
+
+                    span{
+                        font-style: italic;
+                        transform: rotate(-0deg);
+                    }
+                }
             }
         }
     }    
