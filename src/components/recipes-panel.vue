@@ -3,7 +3,7 @@
         <div id="Recipes">
             <div id="RecipesTable">
                 <div class="recipe" v-for="(recipe, index) in listOfRecipes" :key="index">
-                    <div class="title-image-wrap">
+                    <section class="title-image-wrap">
                         <h3>{{ recipe.title }}</h3>
                         <div class="img-meta-wrap">
                             <div class="recipe-image-wrap">
@@ -16,7 +16,7 @@
                                 </div>
                             </div>
                         </div>                                            
-                    </div>                    
+                    </section>                    
                     <section class="ingredients-wrap">
                         <div class="ingredients-used">
                             <h4>What you got!</h4>
@@ -44,7 +44,7 @@
 
                 <!-- RECIPE DETAILS -->
                 <v-dialog                 
-                    v-model="getDialogVisibility"
+                    v-model="dialog"
                     class="recipe-details-dialog"
                     attach>
                     <div class="bg-images" :style="{backgroundImage:'url(' + getRecipeDetails.image + ')'}"></div>
@@ -103,6 +103,11 @@
         },
         methods: {
             ...mapActions(['fetchRecipeInformation', 'setDialogVisibility', 'fetchApi', 'addToShoppingList'])
+        },
+        watch: {
+            getDialogVisibility: function(){
+                this.dialog = !this.dialog
+            }
         }
     }
 </script>

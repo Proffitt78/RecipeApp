@@ -4,7 +4,6 @@
     overflow-x: auto;
     overflow-y: visible;
     padding: 0px 100px 0px 20px;
-    z-index: 200;
     
     #Recipes{
         background-color: @panel-color1;
@@ -17,19 +16,21 @@
     
             .recipe{
                 background-color: fade(@panel-color2, 60%);
+                box-shadow: 10px 20px 40px inset darken(@panel-color2, 8%),
+                            -40px -10px 80px inset darken(@panel-color2, 4%),
+                            0px -0px 180px inset darken(@panel-color2, 7%);
                 display: grid;
-                grid-template-rows: 230px 0fr;
-    
-                &:hover{
-                    background-color: @panel-color2;
-                }
+                grid-template-rows: 240px 0fr;
     
                 .title-image-wrap{
-                    background-color: @panel-color1;
+                    background-color: red;//@panel-color1;
                     line-height: 1;
                     margin-bottom: 0px;
                     overflow: hidden;
                     padding-bottom: 0px;
+
+                    display: grid;
+                    grid-template-rows: 40px 200px;
     
                     h3{        
                         /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#57565a+0,28272d+51,242226+100 */
@@ -69,6 +70,19 @@
                         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57565a', endColorstr='#242226',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
                         display: grid;
                         grid-template-columns: 2fr 1fr;
+                        height: 100%;
+
+                        .recipe-image-wrap{
+                            overflow: hidden;
+                            width: 100%;
+
+                            img{
+                                display: block;                                
+                                min-height: 100%;
+                                min-width: 100%;
+                                width: auto;
+                            }
+                        }
     
                         .meta{
                             align-items: center;
@@ -105,9 +119,9 @@
                 }
     
                 .ingredients-wrap{
-                   display: grid;
-                   grid-template-columns: 1fr 1fr;
-                   padding-top: 10px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    padding-top: 2px;
     
                     >div{
                         background-color: #f3f1e9;
