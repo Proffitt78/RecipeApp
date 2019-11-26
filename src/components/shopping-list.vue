@@ -1,9 +1,11 @@
 <template>
     <section id="ShoppingListWrap">
-        <h2>Shopping List</h2>
         <ul id="ShoppingList">
             <li v-for="(item, index) in getShoppingList" class="shopping-list-item">
-                {{ item.name }}
+                <span>{{ item.name }}</span>
+                <span>
+                    <v-icon @click="removeShoppingListItem(index)">mdi-cart-remove</v-icon>
+                </span>
             </li>
         </ul>
     </section>
@@ -22,6 +24,9 @@ export default {
     },
     computed: {
         ...mapGetters(["getShoppingList"])
+    },
+    methods: {
+        ...mapActions(["removeShoppingListItem"])
     }
 }
 </script>

@@ -43,6 +43,9 @@ export default new Vuex.Store({
         },
         SET_SHOPPING_LIST(state, payload){
             state.shoppingList.push(payload)
+        },
+        REMOVE_SHOPPING_LIST_ITEM(state, payload){
+            Vue.delete(state.shoppingList, payload)
         }
     },
     actions: {
@@ -81,6 +84,9 @@ export default new Vuex.Store({
         },
         addToShoppingList({ commit }, payload){
             commit('SET_SHOPPING_LIST', payload)
+        },
+        removeShoppingListItem({ commit }, payload){
+            commit('REMOVE_SHOPPING_LIST_ITEM', payload)
         }
     },
     getters: {

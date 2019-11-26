@@ -6,7 +6,7 @@
     overflow-x: auto;
     overflow-y: visible;
     
-    #HelperWrap{
+    #CupboardHelperWrap{
         height: 100%;
         overflow: auto;
         overflow-x: auto;
@@ -29,9 +29,8 @@
     }
     
     #CupboardContents{
-        border-bottom: 1px solid red;
         overflow: auto;
-        padding: 0px 15px 0px 25px;
+        padding: 0px 15px 40px 25px;
         height: 75%;
 
         #CupboardHeader{
@@ -59,9 +58,23 @@
 
     #CupboardDrawer{
         background-color: @panel-color2;
-        padding: 15px;
-        overflow: auto;
         height: 25%;
+        overflow: auto;
+        padding: 15px;
+        position: relative;
+
+        >h2{
+            background-color: @panel-color2;
+            // border: 1px solid red;
+            font-size: 3rem;
+            font-weight: 700;
+            left: 0px;
+            margin-bottom: 6px;
+            padding: 5px 10px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
     }
 
     #AvailableIngredientsList{
@@ -78,7 +91,19 @@
             padding-bottom: 5px;
 
             h3{
-                font-size: 2.5rem;
+                font-size: 2.3rem;
+
+                >span{
+                    position: relative;
+                    display: inline-block;
+                    transform: translate(-11px, -4px) rotate(-8deg);
+
+                    &:last-child{
+                        position: relative;
+                        display: inline-block;
+                        transform: translate(-29px, 2px) rotate(-11deg);
+                    }
+                }
             }
 
             #DiscardListBtn{

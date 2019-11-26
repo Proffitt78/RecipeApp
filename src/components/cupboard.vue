@@ -1,6 +1,6 @@
 <template>
     <section id="CupboardWrap">
-        <div id="HelperWrap">
+        <div id="CupboardHelperWrap">
             <div id="InnerHelperWrap">
                 <div id="CupboardContents">
                     <v-form @submit.prevent>
@@ -17,7 +17,7 @@
                     </v-form>
                     <section id="AvailableIngredientsList" v-if="getEnteredIngredients.length > 0" class="entered-ingredients-list">
                         <div id="AvailableIngredientsListHeader">
-                            <h3>Shit I got in the kitchen</h3>
+                            <h3><span>Shit I got</span> <span>in the kitchen</span></h3>
                             <div id="DiscardListBtn" @click="emptyIngredientsList">                        
                                 <v-icon>mdi-delete-empty-outline</v-icon>
                             </div>
@@ -28,6 +28,7 @@
                     </section>
                 </div>
                 <div id="CupboardDrawer">
+                    <h2>Shopping List</h2>
                     <ShoppingList />
                 </div>
             </div>
