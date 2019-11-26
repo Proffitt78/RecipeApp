@@ -135,13 +135,24 @@
             padding: 0px;
 
             li{
-                border-bottom: 1px solid darken(@panel-color1, 10%);
+                // border-bottom: 1px solid darken(@panel-color1, 10%);
                 display: flex;
                 font-size: 2rem;
                 justify-content: space-between;
 
+                &:hover{
+                    background-color: #E0E6E6;
+                    .v-icon{
+                        opacity: 1;
+                    }
+                }
+
                 span{
                     color: #757bce;
+                }
+
+                .v-icon{
+                    opacity: 0;
                 }
 
                 &:nth-of-type(odd){
