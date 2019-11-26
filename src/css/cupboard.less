@@ -1,23 +1,67 @@
-#CupboardWrap{       
-    border: 1px solid black;
+#CupboardWrap{
     border-right: 20px solid #2C2B31;
-    display: grid;
-    grid-template-rows: 30px 1fr 150px;
     position: relative;
-    height: calc(100% - 0px);
+    height: 100%;
     z-index: 10;
+    overflow-x: auto;
+    overflow-y: visible;
+    
+    #HelperWrap{
+        height: 100%;
+        overflow: auto;
+        overflow-x: auto;
+        overflow-y: visible;
+
+        #InnerHelperWrap{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            height: 100%;
+
+            >div{
+                overflow: auto;
+            }
+        }        
+    }
 
     #CupboardHeader{
         // position: absolute;
     }
     
     #CupboardContents{
+        border-bottom: 1px solid red;
         overflow: auto;
-        padding: 0px 15px 0px;
+        padding: 0px 15px 0px 25px;
+        height: 75%;
+
+        #CupboardHeader{
+            background-color: transparent;
+            font-size: 3.4rem;
+            font-weight: 700;
+            padding: 15px 0px 5px;
+            position: relative;
+            left: -23px;
+            top: 9px;
+            transform: rotate(-4deg);
+            z-index: 10;
+        }
+
+        .ingredient-input{
+            margin: 0px;
+            padding: 0px;
+
+            .v-text-field__slot{
+                background-color: darken(@body-color, 10%);
+                padding-left: 8px;
+            }
+        }
     }
 
     #CupboardDrawer{
         background-color: @panel-color2;
+        padding: 15px;
+        overflow: auto;
+        height: 25%;
     }
 
     #AvailableIngredientsList{
@@ -28,9 +72,9 @@
         padding: 10px 20px 30px;
 
         #AvailableIngredientsListHeader{
-            border-bottom: 1px solid darken(@panel-color1, 20%);
-            display: grid;
-            grid-template-columns: 3fr 2fr;
+            // border-bottom: 1px solid darken(@panel-color1, 20%);
+            display: flex;
+            justify-content: space-between;
             padding-bottom: 5px;
 
             h3{

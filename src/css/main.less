@@ -1,9 +1,3 @@
-@import "recipes.less";
-@import "recipes-panel.less";
-@import "cupboard.less";
-@import "recipe-details-dialog.less";
-@import 'variables.less';
-
 @font-face {
     font-family: "TrashHand";
     src: url('../fonts/TrashHand.TTF');
@@ -45,8 +39,16 @@ html{
 }
 
 .app-container{
-    max-width: 100%;
-    margin: 0px 0px 0px 0px;
+    width: 100%;
+    margin: 0px auto;
+    
+    @media(min-width: @screen-lg){
+        max-width: 1280px;
+    }
+
+    @media(min-width: @screen-xxl){
+        max-width: 1900px;
+    }
 }
 
 
@@ -134,8 +136,18 @@ html{
 }
 
 #HomeWrap{
-    display: grid;
-    grid-template-columns: 1fr 3fr;
     height: 100%;
-    padding-left: 100px;
+    
+    #HomeHelperWrap{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        height: 100%;
+    }
 }
+
+@import "recipes.less";
+@import "recipes-panel.less";
+@import "cupboard.less";
+@import "recipe-details-dialog.less";
+@import "shopping-list.less";
+@import 'variables.less';

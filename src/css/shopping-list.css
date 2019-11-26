@@ -1,0 +1,13 @@
+#ShoppingList {
+  border: 3px solid green;
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  list-style-position: inside;
+}
+#ShoppingList .shopping-list-item {
+  font-size: 1.6rem;
+  border: 1px solid red;
+  line-height: 1;
+  padding: 5px 10px;
+}

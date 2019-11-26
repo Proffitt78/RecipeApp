@@ -1,12 +1,11 @@
 <template>
     <section id="ShoppingListWrap">
-        <div id="ShoppingList">
-            <ul>
-                <li v-for="(item, index) in getShoppingList" class="shopping-list-item">
-                    {{ item.name }}
-                </li>
-            </ul>
-        </div>
+        <h2>Shopping List</h2>
+        <ul id="ShoppingList">
+            <li v-for="(item, index) in getShoppingList" class="shopping-list-item">
+                {{ item.name }}
+            </li>
+        </ul>
     </section>
 </template>
 

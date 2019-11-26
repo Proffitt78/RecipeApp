@@ -2,6 +2,9 @@
     <section id="RecipesPanel">
         <div id="Recipes">
             <div id="RecipesTable">
+                <div v-if="listOfRecipes.length == 0" class="landing-page">
+                    Enter some ingredients
+                </div>
                 <div class="recipe" v-for="(recipe, index) in listOfRecipes" :key="index">
                     <section class="title-image-wrap">
                         <h3>{{ recipe.title }}</h3>

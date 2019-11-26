@@ -1,9 +1,11 @@
 <template>
-    <section id="HomeWrap" class="home app-container">        
-        <Cupboard />
-        <RecipesPanel
-            msg="TEst"
-            :listOfRecipes="getRecipes"/>
+    <section id="HomeWrap" class="home app-container">
+        <div id="HomeHelperWrap">
+            <Cupboard />
+            <RecipesPanel
+                msg="TEst"
+                :listOfRecipes="getRecipes"/>
+        </div>        
     </section>
 </template>
 
