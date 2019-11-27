@@ -20,6 +20,7 @@
                             <h3><span>Shit I got</span> <span>in the kitchen</span></h3>
                             <div id="DiscardListBtn" @click="emptyIngredientsList">                        
                                 <v-icon>mdi-delete-empty-outline</v-icon>
+                                <span>Clear List</span>
                             </div>
                         </div>
                         <ul>

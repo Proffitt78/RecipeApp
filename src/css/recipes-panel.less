@@ -12,6 +12,82 @@
         overflow-x: auto;
         overflow-y: visible;
         padding: 0px 10px 50px 10px;
+        position: relative;
+
+        #LandingPage{
+            display: block;
+            // border: 10px solid red;
+            font-family: 'DkHand';
+            font-size: 15rem;
+            left: 0px;
+            position: relative;
+            right: 0px;
+            // top: 100px;
+
+            span{
+                // border: 1px solid brown;  
+                color: #FABE0E;
+                display: inline-block;   
+                position: relative;
+                text-shadow: 3px 3px 0px #d64b08,
+                            3px -3px 0px #d64b08,
+                            -3px 3px 0px #d64b08,                            
+                            -3px -3px 0px #d64b08;           
+                z-index: 10;                
+            }
+
+            #SpanEnter{
+                font-size: 17rem;
+                transform: translate(209px, 113px) rotate(-18deg);                
+                position: relative;
+                z-index: 20;                
+            }
+
+            #SpanSome{
+                transform: translate(209px, 113px) rotate(5deg);
+            }
+
+            #SpanIngredients{
+                font-size: 17rem;
+                transform: translate(209px, -13px) rotate(-5deg);
+            }
+
+            #LandingPointer{
+                color: #FD8664;
+                font-size: 25rem;
+                transform: translate(-509px, -213px) rotate(-55deg);
+                text-shadow: 3px 3px 0px darken(#FD8664, 40%),
+                            3px -3px 0px darken(#FD8664, 40%),
+                            -3px 3px 0px darken(#FD8664, 40%),                            
+                            -3px -3px 0px darken(#FD8664, 40%); 
+            }
+
+            .landing-description{
+                color: #757bce;
+                font-size: 4rem;
+                text-shadow: none;
+
+                &.landing-question{
+                    color: #FD8664;
+                }
+                
+                &#FindRecipes{
+                    transform: translate(409px, 73px) rotate(-15deg);
+                }
+
+                &#Fridge{
+                    transform: translate(-309px, -23px) rotate(25deg);                    
+                }
+
+                &#Cabinets{
+                    transform: translate(509px, -323px) rotate(-35deg);                                        
+                }
+
+                &#Crap{
+                    transform: translate(-109px, 23px) rotate(5deg);                                                            
+                }
+            }
+        }
         
         #RecipesTable{
             display: grid;

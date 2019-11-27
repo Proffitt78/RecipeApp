@@ -1,10 +1,23 @@
 <template>
     <section id="RecipesPanel">
         <div id="Recipes">
-            <div id="RecipesTable">
-                <div v-if="listOfRecipes.length == 0" class="landing-page">
-                    Enter some ingredients
-                </div>
+            <div v-if="listOfRecipes.length == 0" id="LandingPage" class="landing-page">
+                <span id="SpanEnter">Enter</span> <span id="SpanSome">some</span> <span id="SpanIngredients">ingredients</span>
+                <v-icon id="LandingPointer">mdi-cursor-pointer</v-icon>
+                <span class="landing-description" id="FindRecipes">
+                    Find recipes by entering stuff you have!
+                </span>
+                <span class="landing-description" id="Fridge">
+                    Look in the fridge!!!
+                </span>
+                <span class="landing-description landing-question" id="Cabinets">
+                    What's in the cabinets?!?!
+                </span>
+                <span class="landing-description landing-question" id="Crap">
+                    What am I supposed to make with this crap???                        
+                </span>
+            </div>
+            <div id="RecipesTable" v-else>
                 <div class="recipe" v-for="(recipe, index) in listOfRecipes" :key="index">
                     <section class="title-image-wrap">
                         <h3>{{ recipe.title }}</h3>
