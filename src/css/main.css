@@ -40,9 +40,6 @@ html {
   }
 }
 @media (min-width: 2300px) {
-  .app-container {
-    max-width: 1900px;
-  }
 }
 #app {
   background-color: #E0E6E6;
@@ -120,13 +117,73 @@ html {
 }
 #RecipesPanel {
   height: 100%;
-  margin-left: -25px;
+  margin-left: -30px;
   overflow-x: auto;
   overflow-y: visible;
-  padding: 0px 10px 0px 20px;
+  padding: 0px 0px 0px 20px;
 }
 #RecipesPanel #Recipes {
   background-color: #ECDEC3;
+  height: 100%;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 0px 10px 50px 10px;
+  position: relative;
+}
+#RecipesPanel #Recipes #LandingPage {
+  display: block;
+  font-family: 'DkHand';
+  font-size: 15rem;
+  left: 0px;
+  position: relative;
+  right: 0px;
+}
+#RecipesPanel #Recipes #LandingPage span {
+  color: #FABE0E;
+  display: inline-block;
+  position: relative;
+  text-shadow: 3px 3px 0px #d64b08, 3px -3px 0px #d64b08, -3px 3px 0px #d64b08, -3px -3px 0px #d64b08;
+  z-index: 10;
+}
+#RecipesPanel #Recipes #LandingPage #SpanEnter {
+  font-size: 17rem;
+  transform: translate(209px, 113px) rotate(-18deg);
+  position: relative;
+  z-index: 20;
+}
+#RecipesPanel #Recipes #LandingPage #SpanSome {
+  transform: translate(209px, 113px) rotate(5deg);
+}
+#RecipesPanel #Recipes #LandingPage #SpanIngredients {
+  font-size: 17rem;
+  transform: translate(209px, -13px) rotate(-5deg);
+}
+#RecipesPanel #Recipes #LandingPage #LandingPointer {
+  color: #FD8664;
+  font-size: 25rem;
+  transform: translate(-509px, -213px) rotate(-55deg);
+  text-shadow: 3px 3px 0px #932202, 3px -3px 0px #932202, -3px 3px 0px #932202, -3px -3px 0px #932202;
+}
+#RecipesPanel #Recipes #LandingPage .landing-description {
+  color: #757bce;
+  font-size: 4rem;
+  text-shadow: none;
+}
+#RecipesPanel #Recipes #LandingPage .landing-description.landing-question {
+  color: #FD8664;
+}
+#RecipesPanel #Recipes #LandingPage .landing-description#FindRecipes {
+  transform: translate(409px, 73px) rotate(-15deg);
+}
+#RecipesPanel #Recipes #LandingPage .landing-description#Fridge {
+  transform: translate(-309px, -23px) rotate(25deg);
+}
+#RecipesPanel #Recipes #LandingPage .landing-description#Cabinets {
+  transform: translate(509px, -323px) rotate(-35deg);
+}
+#RecipesPanel #Recipes #LandingPage .landing-description#Crap {
+  transform: translate(-109px, 23px) rotate(5deg);
 }
 #RecipesPanel #Recipes #RecipesTable {
   display: grid;
@@ -324,18 +381,28 @@ html {
   position: relative;
   height: 100%;
   z-index: 10;
+  overflow-x: auto;
+  overflow-y: visible;
 }
-#CupboardWrap #HelperWrap {
-  display: grid;
-  grid-template-rows: fit-content(75%) fit-content(25%);
+#CupboardWrap #CupboardHelperWrap {
+  height: 100%;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+#CupboardWrap #CupboardHelperWrap #InnerHelperWrap {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   height: 100%;
 }
-#CupboardWrap #HelperWrap > div {
+#CupboardWrap #CupboardHelperWrap #InnerHelperWrap > div {
   overflow: auto;
 }
 #CupboardWrap #CupboardContents {
   overflow: auto;
-  padding: 0px 15px 0px 25px;
+  padding: 0px 15px 40px 25px;
+  height: 65%;
 }
 #CupboardWrap #CupboardContents #CupboardHeader {
   background-color: transparent;
@@ -358,16 +425,28 @@ html {
 }
 #CupboardWrap #CupboardDrawer {
   background-color: #FABE0E;
-  padding: 15px;
+  height: 35%;
   overflow: auto;
-  min-height: 500px;
+  padding: 15px;
+  position: relative;
+}
+#CupboardWrap #CupboardDrawer > h2 {
+  background-color: #FABE0E;
+  font-size: 3rem;
+  font-weight: 700;
+  left: 0px;
+  margin-bottom: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }
 #CupboardWrap #AvailableIngredientsList {
   background-color: #fffcf7;
   border: 3px inset #676b71;
   box-shadow: -5px 6px 9px #a8b8b8;
   border-radius: 10px;
-  padding: 10px 20px 30px;
+  padding: 10px 0px 30px;
 }
 #CupboardWrap #AvailableIngredientsList #AvailableIngredientsListHeader {
   display: flex;
@@ -375,18 +454,31 @@ html {
   padding-bottom: 5px;
 }
 #CupboardWrap #AvailableIngredientsList #AvailableIngredientsListHeader h3 {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
+}
+#CupboardWrap #AvailableIngredientsList #AvailableIngredientsListHeader h3 > span {
+  position: relative;
+  display: inline-block;
+  transform: translate(10px, -4px) rotate(-8deg);
+}
+#CupboardWrap #AvailableIngredientsList #AvailableIngredientsListHeader h3 > span:last-child {
+  position: relative;
+  display: inline-block;
+  transform: translate(-19px, 3px) rotate(-11deg);
 }
 #CupboardWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  margin-right: 3px;
+  padding: 2px 5px;
+  text-align: center;
+  position: relative;
+  top: -5px;
 }
 #CupboardWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn:hover {
   cursor: pointer;
 }
 #CupboardWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn span {
-  font-size: 1.8rem;
+  display: block;
+  font-size: 1.2rem;
   line-height: 1;
 }
 #CupboardWrap #AvailableIngredientsList #AvailableIngredientsListHeader #DiscardListBtn .v-icon {
@@ -399,13 +491,23 @@ html {
   padding: 0px;
 }
 #CupboardWrap #AvailableIngredientsList ul li {
-  border-bottom: 1px solid #e0c99c;
   display: flex;
   font-size: 2rem;
   justify-content: space-between;
+  padding: 0px 10px 3px;
+}
+#CupboardWrap #AvailableIngredientsList ul li:hover {
+  background-color: #E0E6E6;
+}
+#CupboardWrap #AvailableIngredientsList ul li:hover .v-icon {
+  opacity: 1;
 }
 #CupboardWrap #AvailableIngredientsList ul li span {
   color: #757bce;
+  border-bottom: 1px solid pink;
+}
+#CupboardWrap #AvailableIngredientsList ul li .v-icon {
+  opacity: 0.5;
 }
 #CupboardWrap #AvailableIngredientsList ul li:nth-of-type(odd) span {
   font-style: italic;
@@ -525,21 +627,22 @@ html {
 .recipe-details-dialog .v-dialog__content .v-dialog .dialog-content-helper-wrap section.analyzedInstructions > ul > li > ul li .recipe-number {
   color: red;
 }
-#ShoppingListWrap h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 6px;
+#ShoppingListWrap {
+  padding-top: 20px;
+  position: relative;
 }
 #ShoppingListWrap #ShoppingList {
   border: 1px solid #9f7703;
   margin: 0px;
-  padding: 0px;
+  padding: 5px;
   list-style-position: inside;
   list-style-type: none;
 }
 #ShoppingListWrap #ShoppingList .shopping-list-item {
-  font-size: 1.6rem;
   border-bottom: 1px solid #d19d04;
+  display: flex;
+  font-size: 1.6rem;
+  justify-content: space-between;
   line-height: 1;
-  padding: 5px 10px;
+  padding: 2px 5px;
 }

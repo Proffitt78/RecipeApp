@@ -17,7 +17,8 @@ export default new Vuex.Store({
         recipes: [],
         recipeDetails: {},
         dialogVisibility: false,
-        shoppingList: []
+        shoppingList: [],
+        goShoppingVisibility: false
     },
     mutations: {
         SET_USER(state, payload) {
@@ -46,6 +47,9 @@ export default new Vuex.Store({
         },
         REMOVE_SHOPPING_LIST_ITEM(state, payload){
             Vue.delete(state.shoppingList, payload)
+        },
+        SET_GO_SHOPPING_VISIBILITY(state, payload){
+            state.goShoppingVisibility = !state.goShoppingVisibility
         }
     },
     actions: {
@@ -87,6 +91,9 @@ export default new Vuex.Store({
         },
         removeShoppingListItem({ commit }, payload){
             commit('REMOVE_SHOPPING_LIST_ITEM', payload)
+        },
+        setGoShoppingVisibility({ commit }, payload){
+            commit('SET_GO_SHOPPING_VISIBILITY')
         }
     },
     getters: {
@@ -110,6 +117,9 @@ export default new Vuex.Store({
         },
         getShoppingList(state){
             return state.shoppingList
+        },
+        getGoShoppingVisibility(state){
+            return state.goShoppingVisibility
         }
     },
     modules: {

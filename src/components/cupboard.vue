@@ -29,7 +29,7 @@
                     </section>
                 </div>
                 <div id="CupboardDrawer">
-                    <h2>Shopping List</h2>
+                    <h2><span>Shopping List</span><v-icon @click="setGoShoppingVisibility">mdi-file-find</v-icon></h2>
                     <ShoppingList />
                 </div>
             </div>
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex"
+import { mapState, mapGetters, mapActions } from "vuex"
 import ShoppingList from '@/components/shopping-list.vue'
 
 export default {
@@ -54,6 +54,7 @@ export default {
         ...mapGetters(["getEnteredIngredients"])
     },
     methods: {
+        ...mapActions(['setGoShoppingVisibility']),
         enterIngredient(){
             this.$store.dispatch('fetchApi', this.ingredient)
             this.ingredient = ''
