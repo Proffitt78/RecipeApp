@@ -5,7 +5,8 @@
             <RecipesPanel
                 msg="TEst"
                 :listOfRecipes="getRecipes"/>
-        </div>        
+        </div>      
+        <ShoppingView />  
     </section>
 </template>
 
@@ -13,13 +14,15 @@
 // @ is an alias to /src
 import Cupboard from '@/components/cupboard.vue'
 import RecipesPanel from '@/components/recipes-panel.vue'
+import ShoppingView from '@/components/shopping-view.vue'
 import { mapGetters } from "vuex"
 
 export default {
     name: 'home',
     components: {
         RecipesPanel,
-        Cupboard
+        Cupboard,
+        ShoppingView
     },
     computed: {
         ...mapGetters(["getRecipes"])

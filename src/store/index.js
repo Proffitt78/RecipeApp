@@ -18,7 +18,8 @@ export default new Vuex.Store({
         recipeDetails: {},
         dialogVisibility: false,
         shoppingList: [],
-        goShoppingVisibility: false
+        goShoppingVisibility: false,
+        gottaShopList: []
     },
     mutations: {
         SET_USER(state, payload) {
@@ -120,6 +121,9 @@ export default new Vuex.Store({
         },
         getGoShoppingVisibility(state){
             return state.goShoppingVisibility
+        },
+        getGottaShopList(state){            
+            return state.gottaShopList
         }
     },
     modules: {
